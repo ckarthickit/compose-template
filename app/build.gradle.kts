@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
     //bikeshedding
     id("io.gitlab.arturbosch.detekt") version Versions.DetektVersion  //Static Analysis
     id("com.diffplug.spotless") version Versions.SpotlessVersion //Code Formatting
@@ -124,6 +125,13 @@ dependencies {
     implementation(Deps.Networking.Moshi.Core)
     implementation(Deps.Networking.Moshi.Adapter)
     kapt(Deps.Networking.Moshi.CodeGen)
+    
+    //Use Room for Persistence
+    implementation(Deps.Persistence.Room.Runtime)
+    kapt(Deps.Persistence.Room.Compiler)
+    implementation(Deps.Persistence.Room.KotlinX)
+    //Use Data Store for Preference Persistence
+    implementation(Deps.Persistence.DataStore.Preferences)
     
     //Hilt for DI
     implementation(Deps.Hilt.CoreAndroid)

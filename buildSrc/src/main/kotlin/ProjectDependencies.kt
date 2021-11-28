@@ -14,6 +14,11 @@ object Versions {
     const val retrofitVersion = "2.9.0"
     const val moshiVersion = "1.12.0"
     
+    //Persistcence
+    const val roomVersion = "2.3.0"
+    const val dataStoreVersion = "1.0.0"
+    
+    
     //DI
     const val hilt = "2.38.1"
     const val hiltLifecycle = "1.0.0"
@@ -114,6 +119,19 @@ object Deps {
             const val Core = "com.squareup.moshi:moshi:${Versions.moshiVersion}"
             const val Adapter = "com.squareup.moshi:moshi-adapters:${Versions.moshiVersion}"
             const val CodeGen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiVersion}"
+        }
+    }
+    
+    object Persistence {
+        object Room {
+            const val Runtime = "androidx.room:room-runtime:${Versions.roomVersion}"
+            const val Compiler = "androidx.room:room-compiler:${Versions.roomVersion}"
+            // optional - Kotlin Extensions and Coroutines support for Room
+            const val KotlinX = "androidx.room:room-ktx:${Versions.roomVersion}"
+        }
+        
+        object DataStore {
+            const val Preferences = "androidx.datastore:datastore-preferences:${Versions.dataStoreVersion}"
         }
     }
     
